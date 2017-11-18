@@ -2,7 +2,13 @@
   <MonoDevelop.Ide.ItemProperties.ORM-Projet PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="ORM-Projet/Program.cs">
     <Files>
-      <File FileName="ORM-Projet/Program.cs" Line="1" Column="1" />
+      <File FileName="ORM-Projet/Program.cs" Line="9" Column="13" />
+      <File FileName="ORM-Projet/Connection/EmptyInterface.cs" Line="7" Column="20" />
+      <File FileName="ORM-Projet/Connection/ORMMySQL.cs" Line="17" Column="9" />
+      <File FileName="ORM-Projet/Connection/ORMPostGreSQL.cs" Line="15" Column="13" />
+      <File FileName="ORM-Projet/Connection/ORMSqlServer.cs" Line="22" Column="47" />
+      <File FileName="ORM-Projet/Configuration/DboConfiguration.cs" Line="17" Column="2" />
+      <File FileName="ORM-Projet/DbConfiguration.cs" Line="19" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
