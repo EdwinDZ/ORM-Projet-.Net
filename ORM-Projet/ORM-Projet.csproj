@@ -49,7 +49,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Connection\EmptyInterface.cs" />
+    <Compile Include="Connection\ISQLConnection.cs" />
     <Compile Include="Connection\ORMMySQL.cs" />
     <Compile Include="Connection\ORMPostGreSQL.cs" />
     <Compile Include="Connection\ORMSqlServer.cs" />

@@ -1,13 +1,10 @@
 ﻿<Properties StartupConfiguration="{E2DD8742-22A2-46EB-83F3-2E3ED09A2987}|Default">
   <MonoDevelop.Ide.ItemProperties.ORM-Projet PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ORM-Projet/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ORM-Projet/DbConfiguration.cs">
     <Files>
-      <File FileName="ORM-Projet/Program.cs" Line="9" Column="13" />
-      <File FileName="ORM-Projet/Connection/EmptyInterface.cs" Line="7" Column="20" />
-      <File FileName="ORM-Projet/Connection/ORMMySQL.cs" Line="17" Column="9" />
-      <File FileName="ORM-Projet/Connection/ORMPostGreSQL.cs" Line="15" Column="13" />
-      <File FileName="ORM-Projet/Connection/ORMSqlServer.cs" Line="22" Column="47" />
-      <File FileName="ORM-Projet/Configuration/DboConfiguration.cs" Line="17" Column="2" />
+      <File FileName="ORM-Projet/Connection/ORMMySQL.cs" Line="26" Column="9" />
+      <File FileName="ORM-Projet/Connection/ORMPostGreSQL.cs" Line="63" Column="17" />
+      <File FileName="ORM-Projet/Connection/ORMSqlServer.cs" Line="62" Column="45" />
       <File FileName="ORM-Projet/DbConfiguration.cs" Line="19" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
