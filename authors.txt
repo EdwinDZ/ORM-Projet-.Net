@@ -1,0 +1,24 @@
+Membres du groupe :
+
+	-> Sébastien OUALLET
+	-> Olivier LIN
+	-> Edwin DZEMOVSKI
+	-> Mathieu DEROUICHE
+
+Les responsabilitées :
+
+	I) Mapping :
+		  -> Mathieu DEROUICHE
+      -> Edwin DZEMOVSKI
+
+  II) Connection à plusieurs types de bases de données :
+		  -> Sébastien OUALLET
+
+	III) Requêtes paramétrées :
+		  -> Olivier LIN
+
+	IV) Remontée d'incidents :
+		  -> L'auteur de la partie / fichier concerné.  (Toute l'équipe)
+
+	V) Documentation :
+ 		  -> L'auteur de la partie / fichier concerné.  (Toute l'équipe)
