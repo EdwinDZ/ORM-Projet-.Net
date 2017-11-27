@@ -9,9 +9,9 @@ Les responsabilitées :
 
 	I) Mapping :
 		  -> Mathieu DEROUICHE
-      -> Edwin DZEMOVSKI
+      		  -> Edwin DZEMOVSKI
 
-  II) Connection à plusieurs types de bases de données :
+ 	II) Connection à plusieurs types de bases de données :
 		  -> Sébastien OUALLET
 
 	III) Requêtes paramétrées :
