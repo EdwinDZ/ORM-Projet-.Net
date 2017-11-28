@@ -9,18 +9,18 @@ namespace ORMProjet.Connection
 {
     /// <summary>
     /// Class : ORMSqlServer.cs
-    /// Cette classe permet de gere la connexion à une base de données SQLServer
+    /// Cette classe permet de gérer la connexion à une base de données SQLServer
     /// Elle implémente l'interface ISQLConnection
     /// </summary>
     class ORMSqlServer
     {
-        // Objet gérant la connexion avec la base de donnée
+        // Objet gérant la connexion avec la base de données
         SqlConnection connection;
 
         /// <summary>
-        /// Prépare la connexion avec la base de donnée sans l'ouvrir
+        /// Prépare la connexion avec la base de données sans l'ouvrir
         /// </summary>
-        /// <param name="connectionString"> Chaine de connextion au serveur SQLServer</param>
+        /// <param name="connectionString"> Chaine de connexion au serveur SQLServer</param>
         public ORMSqlServer(String connectionString)
         {
             connection = new SqlConnection(connectionString);
@@ -37,7 +37,7 @@ namespace ORMProjet.Connection
         {
             try
             {
-                // Si la connection est "fermée" alors on "l'ouvre"
+                // Si la connexion est "fermée" alors on "l'ouvre"
                 if (connection.State == ConnectionState.Closed)
                 {
                     connection.Open();
@@ -55,7 +55,7 @@ namespace ORMProjet.Connection
         /// Ferme la connexion a la base de données
         /// </summary>
         /// <returns>
-        /// True si la connexion s'est bien fermé
+        /// True si la connexion s'est bien fermée
         /// False si une erreur est survenue
         /// </returns>
         public Boolean Disconnection()
@@ -73,22 +73,22 @@ namespace ORMProjet.Connection
         }
 
         /// <summary>
-        /// Execute une requete SQLServer avec les paramètres
+        /// Exécute une requête SQLServer avec les paramètres
         /// </summary>
-        /// <param name="req">Requête SQL paramétrable a executer</param>
-        /// <param name="Param">Liste des différents paramètres traité pour éviter les injection SQL</param>
+        /// <param name="req">Requête SQL paramétrable à exécuter</param>
+        /// <param name="Param">Liste des différents paramètres traité pour éviter les injections SQL</param>
         /// <returns>
-        /// True si la connexion c'est bien fermé
+        /// True si la connexion s'est bien fermée
         /// False si une erreur est survenue
         /// </returns>
         public Boolean Execute(String req, List<DboParameter> Param)
         {
             if (this.Connection() == true)
             {
-                // Créer la connextion SQLServer
+                // Créer la connexion SQLServer
                 SqlCommand cmd = new SqlCommand(req, connection);
 
-                // Execute la commande
+                // Exécute la commande
                 // TODO Gérer les erreurs
                 try
                 {
@@ -108,11 +108,11 @@ namespace ORMProjet.Connection
         }
 
         /// <summary>
-        /// Récupère les résultats dans la base de donnée 
+        /// Récupère les résultats dans la base de données 
         /// </summary>
-        /// <typeparam name="T">Type d'objet a récupérer </typeparam>
-        /// <param name="req">Requête a exeucter</param>
-        /// <param name="Param">Liste des différents paramètres traité pour éviter les injection SQL</param>
+        /// <typeparam name="T">Type d'objet à récupérer </typeparam>
+        /// <param name="req">Requête à exécuter</param>
+        /// <param name="Param">Liste des différents paramètres traités pour éviter les injections SQL</param>
         /// <returns></returns>
         public List<T> List<T>(String req, List<DboParameter> Param) where T : new()
         {
@@ -124,7 +124,7 @@ namespace ORMProjet.Connection
             {
                 // Créer une commande SQL
                 SqlCommand cmd = new SqlCommand(req, connection);
-                // Execute la commande et récupère les donnée à travers SQLServerDataReader
+                // Exécute la commande et récupère les données à travers SQLServerDataReader
                 SqlDataReader dataReader = cmd.ExecuteReader();
 
                 // Index de la ligne courrante
@@ -132,53 +132,53 @@ namespace ORMProjet.Connection
                 // Lecteur ligne par ligne des résultats
                 while (dataReader.Read())
                 {
-                    // Ajoute un objet générique a la list de retour
+                    // Ajoute un objet générique à la liste de retour
                     list.Add(new T());
 
-                    // Nombre de colonne associé à la ligne
+                    // Nombre de colonne associée à la ligne
                     int nbColumn = dataReader.FieldCount;
 
-                    // pour chacune des column du résultat
+                    // pour chacune des colonnes du résultat
                     for (int i = 0; i < nbColumn; i++)
                     {
-                        // Nom de la column "i"
+                        // Nom de la colonne "i"
                         String columnName = dataReader.GetName(i).ToLower();
-                        // Nom de la column "i" avec la premiere lettre en majucule
+                        // Nom de la colonne "i" avec la première lettre en majucule
                         String propertyName = FirstUpper(columnName);
-                        // Valeur de la column.
+                        // Valeur de la colonne
                         object columnValue = dataReader[columnName];
 
-                        // Objet générique de la liste de retour associer au resultat parcourur [soit currentRow]
+                        // Objet générique de la liste de retour associée au résultat parcouru [soit currentRow]
                         T obj = list[currentRow];
                         // Recupération du type de l'objet générique
                         Type type = obj.GetType();
-                        // Récupération des information de la propriété ayant le même nom que la column (a la majuscule Pret)
+                        // Récupération des informations de la propriété ayant le même nom que la column (a la majuscule Pret)
                         PropertyInfo propInfo = type.GetProperty(propertyName);
                         // Si la propriété existe
                         if (propInfo != null)
                         {
-                            // Mettre a jour la valeur de la propriété de l'objet générique
+                            // Mettre à jour la valeur de la propriété de l'objet générique
                             propInfo.SetValue(obj, columnValue);
                         }
                     }
-                    // Incrémenté l'index de la ligne parcourue
+                    // Incrémente l'index de la ligne parcourue
                     currentRow++;
                 }
 
-                // Fermer le dataReader
+                // Ferme le dataReader
                 dataReader.Close();
 
-                // Fermer la connexion
+                // Ferme la connexion
                 this.Disconnection();
 
             }
             
-            // Retourner la list
+            // Retourné la liste
             return list;
         }
 
         /// <summary>
-        /// Permet de mettre la premier lettre en majuscule
+        /// Permet de mettre la première lettre en majuscule
         /// </summary>
         /// <param name="str">Chaine de caractère à modifier</param>
         /// <returns>Retourne une chaine de caractère dont la première lettre est en majuscule</returns>
