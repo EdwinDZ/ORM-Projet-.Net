@@ -2,7 +2,7 @@
 using System.Data;
 using Npgsql;
 using System.Reflection;
-using ORMProjet.Configuration;
+using ORMProjet.Exceptions;
 using System.Collections.Generic;
 
 namespace ORMProjet.Connection
@@ -45,9 +45,19 @@ namespace ORMProjet.Connection
 
                 return true;
             }
-            catch (Exception ex)
+            catch (NpgsqlException ex)
             {
-                return false;
+                switch (ex.ErrorCode)
+                {
+                    case 220:
+                        throw new ORMExceptionsConnectionPostGreSql("Connexion impossible, veuillez vérifier votre connectionString.", ex);
+                        return false;
+                    case 402:
+                        throw new ORMExceptionsConnectionPostGreSql("Impossible de se connecter à la base de données.", ex);
+                        return false;
+                    default:
+                        return false;
+                }
             }
         }
 
@@ -67,8 +77,9 @@ namespace ORMProjet.Connection
                 connection.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch (NpgsqlException ex)
             {
+                throw new ORMExceptionsDeconnectionPostGreSql("Erreur lors de la déconnexion au serveur MySQL", ex);
                 return false;
             }
         }

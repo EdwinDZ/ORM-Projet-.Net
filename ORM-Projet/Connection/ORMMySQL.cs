@@ -2,7 +2,7 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Reflection;
-using ORMProjet.Configuration;
+using ORMProjet.Exceptions;
 using System.Collections.Generic;
 
 namespace ORMProjet.Connection
@@ -45,9 +45,22 @@ namespace ORMProjet.Connection
 
                 return true;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
-                return false;
+                switch (ex.Number)
+                {
+                    case 0 : 
+                        throw new ORMExceptionsConnectionMySql("Connexion au serveur MySQL impossible.", ex);
+                        return false;
+                    case 1045 : 
+                        throw new ORMExceptionsConnectionMySql("Combinaison username / password incorrecte.", ex);
+                        return false;
+                    case 2049 :
+                        throw new ORMExceptionsConnectionMySql("Connexion à l'aide de l'ancien protocole d'authentification refusé (option client 'secure_auth' activée)", ex);
+                        return false;
+                    default:
+                        return false;
+                }
             }   
         }
 
@@ -66,11 +79,13 @@ namespace ORMProjet.Connection
                 connection.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch (MySqlException ex)
             {
+                throw new ORMExceptionsDeconnectionMySql("Erreur lors de la déconnexion au serveur MySQL", ex);
                 return false;
             }
         }
+
         /// <summary>
         /// Exécute une requête MySQL avec les paramètres
         /// </summary>
@@ -105,6 +120,7 @@ namespace ORMProjet.Connection
             }
             return false;
         }
+
         /// <summary>
         /// Récupère les résultats dans la base de données 
         /// </summary>

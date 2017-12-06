@@ -1,1 +1,2 @@
 /Users/seb/Projects/ORM-Projet-.Net/ORM-Projet/obj/x86/Debug/ORM-Projet.csproj.CoreCompileInputs.cache
+/Users/seb/Projects/ORM-Projet-.Net/ORM-Projet/obj/x86/Debug/ORM-Projet.csprojResolveAssemblyReference.cache
