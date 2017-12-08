@@ -110,7 +110,26 @@ namespace ORMProjet.Connection
                 }
                 catch (SqlException ex)
                 {
-                    throw new Exception("message", ex);
+                    switch (ex.Number)
+                    {
+                        case 49918:
+                            throw new ORMExceptionsQuerySqlServer("Impossible de traiter la requête. Ressources insuffisantes pour traiter la demande. Le service est actuellement occupé. Relancez la requête ultérieurement.", ex);
+                            return false;
+                        case 49919:
+                            throw new ORMExceptionsQuerySqlServer("Le service est occupé à traiter plusieurs demandes de création ou de mise à jour pour votre abonnement ou le serveur.Patientez jusqu’à ce que les demandes de création ou de mise à jour soient terminées ou supprimez l’une de vos requêtes en cours et réessayez votre requête ultérieurement.", ex);
+                            return false;
+                        case 49920:
+                            throw new ORMExceptionsQuerySqlServer("Le serveur est trop occupé pour prendre en charge les requêtes supérieures à %d pour cette base de données", ex);
+                            return false;
+                        case 40551:
+                            throw new ORMExceptionsQuerySqlServer("La session a été arrêtée en raison de l’utilisation excessive de TEMPDB . Essayez de modifier votre requête pour réduire l’espace utilisé par la table temporaire.", ex);
+                            return false;
+                        case 40553:
+                            throw new ORMExceptionsQuerySqlServer("La session a été arrêtée en raison d’une utilisation excessive de la mémoire. Essayez de modifier votre requête pour traiter moins de lignes.", ex);
+                            return false;
+                        default:
+                            return false;
+                    }
                 }
 
                 // Ferme la connexion

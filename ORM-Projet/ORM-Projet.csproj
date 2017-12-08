@@ -61,7 +61,9 @@
     <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionPostGreSql.cs" />
     <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionSqlServer.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Exceptions\Query\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="docs\MySqlTransaction.xml" />
     <None Include="docs\MySqlParameterCollection.xml" />
@@ -77,10 +79,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-    <Folder Include="Exceptions\Connection\" />
-    <Folder Include="Exceptions\Disconnection\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -110,7 +110,7 @@ namespace ORMProjet.Connection
                 }
                 catch (MySqlException ex)
                 {
-                    throw new Exception("message", ex);
+                    throw new ORMExceptionsQueryMySql("Connection au serveur MySQL perdue pendant la requête", ex);
                 }
 
                 // Ferme la connexion
