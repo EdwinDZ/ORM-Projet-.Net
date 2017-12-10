@@ -1,27 +1,6 @@
 ﻿<Properties StartupConfiguration="{E2DD8742-22A2-46EB-83F3-2E3ED09A2987}|Default">
   <MonoDevelop.Ide.ItemProperties.ORM-Projet PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ORM-Projet/Connection/ORMPostGreSQL.cs">
-    <Files>
-      <File FileName="ORM-Projet/Connection/ORMPostGreSQL.cs" Line="47" Column="14" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ORM-Projet" expanded="True">
-            <Node name="ORM-Projet" expanded="True">
-              <Node name="Connection" expanded="True">
-                <Node name="ORMPostGreSQL.cs" selected="True" />
-              </Node>
-              <Node name="Exceptions" expanded="True">
-                <Node name="Connection" expanded="True" />
-                <Node name="Disconnection" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -60,6 +60,11 @@
     <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionMySql.cs" />
     <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionPostGreSql.cs" />
     <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionSqlServer.cs" />
+    <Compile Include="Mapping\AssistantDonnee.cs" />
+    <Compile Include="Mapping\GenerationDonnee.cs" />
+    <Compile Include="Mapping\MappeurNomDonnee.cs" />
+    <Compile Include="Mapping\MappeurPropriete.cs" />
+    <Compile Include="Mapping\NomDonnee.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
