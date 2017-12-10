@@ -50,13 +50,13 @@ namespace ORMProjet.Connection
                 switch (ex.Number)
                 {
                     case 4060:
-                        throw new ORMExceptionsConnectionSqlServer("Impossible d'ouvrir la base de donnée demandée par le login. La connexion a échoué.", ex);
+                        throw new ORMExceptionsConnection("Impossible d'ouvrir la base de donnée demandée par le login. La connexion a échoué.", ex);
                         return false;
                     case 40613:
-                        throw new ORMExceptionsConnectionSqlServer("La base de données sur le serveur n'est pas disponible actuellement. Veuillez réessayer la connexion plus tard. Si le problème persiste, contactez le service client.", ex);
+                        throw new ORMExceptionsConnection("La base de données sur le serveur n'est pas disponible actuellement. Veuillez réessayer la connexion plus tard. Si le problème persiste, contactez le service client.", ex);
                         return false;
                     case 40852:
-                        throw new ORMExceptionsConnectionSqlServer(" Impossible d'ouvrir la base de données sur le serveur demandé par le login. L'accès à la base de données est uniquement autorisé à l'aide d'une chaîne de connexion sécurisée.", ex);
+                        throw new ORMExceptionsConnection(" Impossible d'ouvrir la base de données sur le serveur demandé par le login. L'accès à la base de données est uniquement autorisé à l'aide d'une chaîne de connexion sécurisée.", ex);
                         return false;
                     default:
                         return false;

@@ -50,13 +50,13 @@ namespace ORMProjet.Connection
                 switch (ex.Number)
                 {
                     case 0 : 
-                        throw new ORMExceptionsConnectionMySql("Connexion au serveur MySQL impossible.", ex);
+                        throw new ORMExceptionsConnection("Connexion au serveur MySQL impossible.", ex);
                         return false;
                     case 1045 : 
-                        throw new ORMExceptionsConnectionMySql("Combinaison username / password incorrecte.", ex);
+                        throw new ORMExceptionsConnection("Combinaison username / password incorrecte.", ex);
                         return false;
                     case 2049 :
-                        throw new ORMExceptionsConnectionMySql("Connexion à l'aide de l'ancien protocole d'authentification refusé (option client 'secure_auth' activée)", ex);
+                        throw new ORMExceptionsConnection("Connexion à l'aide de l'ancien protocole d'authentification refusé (option client 'secure_auth' activée)", ex);
                         return false;
                     default:
                         return false;
@@ -81,7 +81,7 @@ namespace ORMProjet.Connection
             }
             catch (MySqlException ex)
             {
-                throw new ORMExceptionsDeconnectionMySql("Erreur lors de la déconnexion au serveur MySQL", ex);
+                throw new ORMExceptionsDeconnection("Erreur lors de la déconnexion au serveur MySQL", ex);
                 return false;
             }
         }

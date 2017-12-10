@@ -15,5 +15,6 @@ Le principe est le suivant :
 
 ### Contributeur
   * [Mathieu DEROUICHE](https://github.com/MathieuDer)
-  * [Olivier LIN](https://github.com/Zorn93)
   * [Edwin DZEMOVSKI](https://github.com/EdwinDZ)
+  * [Olivier LIN](https://github.com/Zorn93)
+  * [Sébastien OUALLET](https://github.com/Souallet)  

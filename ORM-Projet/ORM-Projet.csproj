@@ -54,12 +54,8 @@
     <Compile Include="Connection\ORMPostGreSQL.cs" />
     <Compile Include="Connection\ORMSqlServer.cs" />
     <Compile Include="Configuration\DboConfiguration.cs" />
-    <Compile Include="Exceptions\Connection\ORMExceptionsConnectionMySql.cs" />
-    <Compile Include="Exceptions\Connection\ORMExceptionsConnectionPostGreSql.cs" />
-    <Compile Include="Exceptions\Connection\ORMExceptionsConnectionSqlServer.cs" />
-    <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionMySql.cs" />
-    <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionPostGreSql.cs" />
-    <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnectionSqlServer.cs" />
+    <Compile Include="Exceptions\Connection\ORMExceptionsConnection.cs" />
+    <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnection.cs" />
     <Compile Include="Mapping\AssistantDonnee.cs" />
     <Compile Include="Mapping\GenerationDonnee.cs" />
     <Compile Include="Mapping\MappeurNomDonnee.cs" />

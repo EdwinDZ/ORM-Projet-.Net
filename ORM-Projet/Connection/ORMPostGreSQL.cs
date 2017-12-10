@@ -50,10 +50,10 @@ namespace ORMProjet.Connection
                 switch (ex.ErrorCode)
                 {
                     case 220:
-                        throw new ORMExceptionsConnectionPostGreSql("Connexion impossible, veuillez vérifier votre connectionString.", ex);
+                        throw new ORMExceptionsConnection("Connexion impossible, veuillez vérifier votre connectionString.", ex);
                         return false;
                     case 402:
-                        throw new ORMExceptionsConnectionPostGreSql("Impossible de se connecter à la base de données.", ex);
+                        throw new ORMExceptionsConnection("Impossible de se connecter à la base de données.", ex);
                         return false;
                     default:
                         return false;
@@ -79,7 +79,7 @@ namespace ORMProjet.Connection
             }
             catch (NpgsqlException ex)
             {
-                throw new ORMExceptionsDeconnectionPostGreSql("Erreur lors de la déconnexion au serveur MySQL", ex);
+                throw new ORMExceptionsDeconnection("Erreur lors de la déconnexion au serveur MySQL", ex);
                 return false;
             }
         }

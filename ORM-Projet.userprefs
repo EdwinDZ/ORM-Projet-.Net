@@ -1,6 +1,14 @@
 ﻿<Properties StartupConfiguration="{E2DD8742-22A2-46EB-83F3-2E3ED09A2987}|Default">
   <MonoDevelop.Ide.ItemProperties.ORM-Projet PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ORM-Projet/Connection/ORMSqlServer.cs">
+    <Files>
+      <File FileName="ORM-Projet/Connection/ORMPostGreSQL.cs" Line="77" Column="36" />
+      <File FileName="ORM-Projet/Exceptions/Connection/ORMExceptionsConnection.cs" Line="24" Column="9" />
+      <File FileName="ORM-Projet/Exceptions/Disconnection/ORMExceptionsDeconnection.cs" Line="31" Column="20" />
+      <File FileName="ORM-Projet/Connection/ORMMySQL.cs" Line="78" Column="45" />
+      <File FileName="ORM-Projet/Connection/ORMSqlServer.cs" Line="54" Column="38" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
