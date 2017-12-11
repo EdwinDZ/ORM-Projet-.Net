@@ -108,7 +108,17 @@ namespace ORMProjet.Connection
                 }
                 catch (NpgsqlException ex)
                 {
-                    throw new Exception("message", ex);
+                    switch (ex.ErrorCode)
+                    {
+                        case 203:
+                            throw new ORMExceptionsQuery("La requête a renvoyé plusieurs lignes mais les variables spécifiées ne sont pas des tableaux. La commande SELECT n'était pas unique.", ex);
+                            return false;
+                        case 208:
+                            throw new ORMExceptionsQuery("La requête était vide. (Cela ne peut normalement pas se produire dans un programme Embedded SQL, ce qui peut indiquer une erreur interne.)", ex);
+                            return false;
+                        default:
+                            return false;
+                    }
                 }
 
                 // Ferme la connexion
