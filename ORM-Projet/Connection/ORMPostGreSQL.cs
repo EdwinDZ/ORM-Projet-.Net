@@ -4,6 +4,7 @@ using Npgsql;
 using System.Reflection;
 using ORMProjet.Exceptions;
 using System.Collections.Generic;
+using ORMProjet.Configuration;
 
 namespace ORMProjet.Connection
 {
