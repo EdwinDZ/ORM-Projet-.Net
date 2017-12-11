@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ORMProjet.Exceptions;
 
 namespace ORMProjet.Configuration
 {
     /// <summary>
     /// Gestion des paramètres de la requête SQL
     /// </summary>
-    class DboParameter
+    public class DboParameter
     {
         // Clé
         public String Key { get; set; }
@@ -67,7 +68,7 @@ namespace ORMProjet.Configuration
             else
             {
                 // TODO Lever une exception spécifique
-                throw new Exception();
+                throw new MyCustomException("Aucune présence du type");
             }
         }
 

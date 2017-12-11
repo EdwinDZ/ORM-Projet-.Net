@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\DboParameter.cs" />
+    <Compile Include="Exceptions\MyCustom\MyCustomException.cs" />
     <Compile Include="Exceptions\Query\ORMExceptionsQuery.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
