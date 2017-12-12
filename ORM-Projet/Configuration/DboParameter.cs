@@ -52,12 +52,10 @@ namespace ORMProjet.Configuration
                 }
                 else if (value.GetType().Equals(typeof(String)))
                 {
-                    // TODO Parser pour éviter les injection SQL
                     this.Value = EscapeParam((String)value);
                 }
                 else if (value.GetType().Equals(typeof(Boolean)))
                 {
-                    // TODO Changer True/False en 0/1 /!\ prise en compte du SGBD les valeurs peuvent différer.
                     this.Value = ChangeBoolean((Boolean)value);
                 }
                 else
@@ -67,7 +65,6 @@ namespace ORMProjet.Configuration
             }
             else
             {
-                // TODO Lever une exception spécifique
                 throw new MyCustomException("Aucune présence du type");
             }
         }

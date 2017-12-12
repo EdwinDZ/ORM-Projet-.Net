@@ -102,7 +102,6 @@ namespace ORMProjet.Connection
                 NpgsqlCommand cmd = new NpgsqlCommand(req, connection);
 
                 // Exécute la commande
-                // TODO Gérer les erreurs
                 try
                 {
                     cmd.ExecuteNonQuery();

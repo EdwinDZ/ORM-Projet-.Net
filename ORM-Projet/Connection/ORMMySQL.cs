@@ -104,7 +104,6 @@ namespace ORMProjet.Connection
                 MySqlCommand cmd = new MySqlCommand(req, connection);
 
                 // Exécute la commande
-                // TODO Gère les erreurs
                 try
                 {
                     cmd.ExecuteNonQuery();

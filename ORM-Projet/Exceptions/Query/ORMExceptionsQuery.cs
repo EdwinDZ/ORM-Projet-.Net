@@ -3,7 +3,7 @@ namespace ORMProjet.Exceptions
 {
 
     /// <summary>
-    /// Class liée aux exceptions de déconnection de MySql.
+    /// Class liée aux exceptions de l'exécution des query.
     /// </summary>
     public class ORMExceptionsQuery : Exception
     {

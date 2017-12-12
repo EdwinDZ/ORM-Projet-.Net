@@ -73,7 +73,6 @@ namespace ORMProjet.Mapping
         /// <param name="request"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        // TODO Echapement des paramètres
         private static String SetParams(String request, List<DboParameter> parameters)
         {
             for (int i = 0; i < parameters.Count; i++)

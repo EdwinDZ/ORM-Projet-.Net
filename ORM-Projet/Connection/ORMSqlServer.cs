@@ -104,7 +104,6 @@ namespace ORMProjet.Connection
                 SqlCommand cmd = new SqlCommand(req, connection);
 
                 // Exécute la commande
-                // TODO Gérer les erreurs
                 try
                 {
                     cmd.ExecuteNonQuery();
