@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ORM-Projet</name>
+    </assembly>
+    <members>
+        <member name="T:ORMProjet.Configuration.DboParameter">
+            <summary>
+            Gestion des paramètres de la requête SQL
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Configuration.DboParameter.#ctor(System.String,System.Object)">
+            <summary>
+            Associer une valeur a une clé
+            </summary>
+            <param name="key">Clé du paramètre</param>
+            <param name="value">Valeur du paramètre</param>
+        </member>
+        <member name="M:ORMProjet.Configuration.DboParameter.TestTypeValue(System.Type)">
+            <summary>
+            Vérifier la présence du paramètre dans la liste des type accepté
+            </summary>
+            <param name="valueTypeName">Type de variable à tester</param>
+            <returns>
+            True si le type est présent
+            False si le type n'est pas présent
+            </returns>
+        </member>
+        <member name="T:ORMProjet.Configuration.DboConfiguration">
+            <summary>
+            Class : DboConfiguration.cd
+            Classe abstraite permettant de configurer la chaine de connexion et le type de base de donnée
+            </summary>
+        </member>
+        <member name="T:ORMProjet.Configuration.DboConfiguration.TypeSGBD">
+            <summary>
+            Enumération des différents type de SGBD
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Configuration.DboConfiguration.GetDbType">
+            <summary>
+            Récupère le type de base de données utilisé
+            </summary>
+            <returns>Retourne le type de base de données</returns>
+        </member>
+        <member name="M:ORMProjet.Configuration.DboConfiguration.GetConnectionString">
+            <summary>
+            Récupère la chaine de connexion
+            </summary>
+            <returns>Retourne la chaine de connexion</returns>
+        </member>
+        <member name="T:ORMProjet.Exceptions.MyCustomException">
+            <summary>
+            Class liée aux exceptions de déconnection de MySql.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.MyCustomException.#ctor">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.MyCustomException"/>.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.MyCustomException.#ctor(System.String)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.MyCustomException"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+        </member>
+        <member name="M:ORMProjet.Exceptions.MyCustomException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.MyCustomException"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+            <param name="inner">Association de l'exception, de base, complète.</param>
+        </member>
+        <member name="T:ORMProjet.Exceptions.ORMExceptionsQuery">
+            <summary>
+            Class liée aux exceptions de l'exécution des query.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsQuery.#ctor">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsQuery"/>.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsQuery.#ctor(System.String)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsQuery"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsQuery.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsQuery"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+            <param name="inner">Association de l'exception, de base, complète.</param>
+        </member>
+        <member name="T:ORMProjet.Exceptions.ORMExceptionsConnection">
+            <summary>
+            Class liée aux exceptions de connection de MySql.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsConnection.#ctor">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsConnection"/>.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsConnection.#ctor(System.String)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsConnection"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsConnection.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsConnection"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+            <param name="inner">Association de l'exception, de base, complète.</param>
+        </member>
+        <member name="T:ORMProjet.Exceptions.ORMExceptionsDeconnection">
+            <summary>
+            Class liée aux exceptions de déconnection de MySql.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsDeconnection.#ctor">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsDeconnection"/>.
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsDeconnection.#ctor(System.String)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsDeconnection"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+        </member>
+        <member name="M:ORMProjet.Exceptions.ORMExceptionsDeconnection.#ctor(System.String,System.Exception)">
+            <summary>
+            Initialise une nouvelle instance de la class <see cref="T:ORMProjet.Exceptions.ORMExceptionsDeconnection"/>.
+            </summary>
+            <param name="message">Message d'erreur à retourner.</param>
+            <param name="inner">Association de l'exception, de base, complète.</param>
+        </member>
+        <member name="T:ORMProjet.Connection.ISQLConnection">
+            <summary>
+            Class : ISQLConnection.cd
+            Interface permettant de configurer la chaine de connexion et le type de base de donnée
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Connection.ISQLConnection.Connection">
+            <summary>
+            Ouvre une connextion
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ISQLConnection.Disconnection">
+            <summary>
+            Ferme la connexion
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ISQLConnection.Execute(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Exécute la requête SQL avec les paramètre associés
+            </summary>
+            <param name="request">Requête paramatré à exécuter</param>
+            <param name="parameters">Liste de paramètres à traiter contre les injections SQL</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ISQLConnection.List``1(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Retourne les résultat d'un SELECT en Base de donnée
+            </summary>
+            <typeparam name="T">Type de l'objet voulu</typeparam>
+            <param name="request">Requête paramatré à éxecuter</param>
+            <param name="parameters">Liste de paramètres à traiter contre les injections SQL</param>
+            <returns></returns>
+        </member>
+        <member name="T:ORMProjet.Connection.ORMMySQL">
+            <summary>
+            Class : ORMMySQL.cs
+            Cette classe permet de gérer la connexion à une base de données MySQL
+            Elle implémente l'interface ISQLConnection
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMMySQL.#ctor(System.String)">
+            <summary>
+            Prépare la connexion avec la base de données sans l'ouvrir
+            </summary>
+            <param name="connectionString"> Chaine de connexion au serveur MySQL</param>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMMySQL.Connection">
+            <summary>
+            Ouvre la connexion sur la base de données
+            </summary>
+            <returns>
+            True si la connexion s'est bien ouverte
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMMySQL.Disconnection">
+            <summary>
+            Ferme la connexion à la base de données
+            </summary>
+            <returns>
+            True si la connexion s'est bien fermée
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMMySQL.Execute(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Exécute une requête MySQL avec les paramètres
+            </summary>
+            <param name="req">Requête SQL paramétrable a exécuter</param>
+            <param name="Param">Liste des différents paramètres traité pour éviter les injections SQL</param>
+            <returns>
+            True si la connexion s'est bien fermée
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMMySQL.List``1(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Récupère les résultats dans la base de données 
+            </summary>
+            <typeparam name="T">Type d'objet à récupérer </typeparam>
+            <param name="req">Requête à exécuter</param>
+            <param name="Param">Liste des différents paramètres traité pour éviter les injections SQL</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMMySQL.FirstUpper(System.String)">
+            <summary>
+            Permet de mettre la première lettre en majuscule
+            </summary>
+            <param name="str">Chaine de caractère à modifier</param>
+            <returns>Retourne une chaine de caractère dont la première lettre est en majuscule</returns>
+        </member>
+        <member name="T:ORMProjet.Connection.ORMPostGreSQL">
+            <summary>
+            Class : ORMPostGreSQL.cd
+            Cette classe permet de gérer la connexion à une base de données PostGreSQL
+            Elle implémente l'interface ISQLConnection
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMPostGreSQL.#ctor(System.String)">
+            <summary>
+            Prépare la connexion avec la base de donnée sans l'ouvrir
+            </summary>
+            <param name="connectionString"> Chaine de connexion au serveur PostGreSQL</param>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMPostGreSQL.Connection">
+            <summary>
+            Ouvre la connexion sur la base de données
+            </summary>
+            <returns>
+            True si la connexion s'est bien ouverte
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMPostGreSQL.Disconnection">
+            <summary>
+            Ferme la connexion à la base de données
+            </summary>
+            <returns>
+            True si la connexion s'est bien fermé
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMPostGreSQL.Execute(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Execute une requête PostGreSQL avec les paramètres
+            </summary>
+            <param name="req">Requête SQL paramétrable a exécuter</param>
+            <param name="Param">Liste des différents paramètres traité pour éviter les injections SQL</param>
+            <returns>
+            True si la connexion s'est bien fermée
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMPostGreSQL.List``1(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Récupère les résultats dans la base de données
+            </summary>
+            <typeparam name="T">Type d'objet à récupérer </typeparam>
+            <param name="req">Requête a exécuter</param>
+            <param name="Param">Liste des différents paramètres traité pour éviter les injections SQL</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMPostGreSQL.FirstUpper(System.String)">
+            <summary>
+            Permet de mettre la première lettre en majuscule
+            </summary>
+            <param name="str">Chaine de caractère à modifier</param>
+            <returns>Retourne une chaine de caractère dont la première lettre est en majuscule</returns>
+        </member>
+        <member name="T:ORMProjet.Connection.ORMSqlServer">
+            <summary>
+            Class : ORMSqlServer.cs
+            Cette classe permet de gérer la connexion à une base de données SQLServer
+            Elle implémente l'interface ISQLConnection
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMSqlServer.#ctor(System.String)">
+            <summary>
+            Prépare la connexion avec la base de données sans l'ouvrir
+            </summary>
+            <param name="connectionString"> Chaine de connexion au serveur SQLServer</param>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMSqlServer.Connection">
+            <summary>
+            Ouvre la connexion sur la base de données
+            </summary>
+            <returns>
+            True si la connexion s'est bien ouverte
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMSqlServer.Disconnection">
+            <summary>
+            Ferme la connexion a la base de données
+            </summary>
+            <returns>
+            True si la connexion s'est bien fermée
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMSqlServer.Execute(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Exécute une requête SQLServer avec les paramètres
+            </summary>
+            <param name="req">Requête SQL paramétrable à exécuter</param>
+            <param name="Param">Liste des différents paramètres traité pour éviter les injections SQL</param>
+            <returns>
+            True si la connexion s'est bien fermée
+            False si une erreur est survenue
+            </returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMSqlServer.List``1(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Récupère les résultats dans la base de données 
+            </summary>
+            <typeparam name="T">Type d'objet à récupérer </typeparam>
+            <param name="req">Requête à exécuter</param>
+            <param name="Param">Liste des différents paramètres traités pour éviter les injections SQL</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Connection.ORMSqlServer.FirstUpper(System.String)">
+            <summary>
+            Permet de mettre la première lettre en majuscule
+            </summary>
+            <param name="str">Chaine de caractère à modifier</param>
+            <returns>Retourne une chaine de caractère dont la première lettre est en majuscule</returns>
+        </member>
+        <member name="T:ORMProjet.Mapping.DataAttributes">
+            <summary>
+            Obtien la liste des noms de colones de la classe DataNames
+            </summary>
+        </member>
+        <member name="T:ORMProjet.Mapping.DataNames">
+            <summary>
+            Mapping des noms de colones sur les objets correspondants 
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Mapping.DataNames.#ctor">
+            <summary>
+            Creation d'une nouvelle liste
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Mapping.DataNames.#ctor(System.String[])">
+            <summary>
+            Définition de la liste avec les paramètre valueNames
+            </summary>
+            <param name="valueNames"></param>
+        </member>
+        <member name="T:ORMProjet.Mapping.GenerateData">
+            <summary>
+            Récupérer les donneés de la liste et les insére en mémoire dans un objet DataSet
+            </summary>
+        </member>
+        <member name="T:ORMProjet.Mapping.NamesMapper`1">
+            <summary>
+              //Déterminez quelles colonnes existent dans cette rangée
+              //Déterminez si TEntity à laquelle nous sommes mappés possède des propriétés ayant le même nom que l'une des colonnes (noms de données)
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:ORMProjet.Mapping.NamesMapper`1.Map(System.Data.DataRow,`0)">
+            <summary>
+            Mappez la valeur du DataRow vers TEntity.
+            </summary>
+            <param name="row"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Mapping.NamesMapper`1.Map(System.Data.DataTable)">
+            <summary>
+            Map la valeurs du DataRow vers un DataTable
+            </summary>
+            <param name="table"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORMProjet.Mapping.PropertyMapper">
+            <summary>
+            Met en correspondance les valeurs avec différents types (int, string, DateTime, etc.).
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Mapping.PropertyMapper.ParsePrimitive(System.Reflection.PropertyInfo,System.Object,System.Object)">
+            <summary>
+            Cette classe permet d'attribuer une valeur à une référence de propriété transmise (PropertyInfo)
+            </summary>
+            <param name="prop"></param>
+            <param name="entity"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ORMProjet.Mapping.PropertyMapper.ParseBoolean(System.Object)">
+            <summary>
+            Convertie la valeur sous forme de chaine de caractère en boolean
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ORMProjet.Mapping.DboMapper">
+            <summary>
+            Cette classe permet executer des requête
+            selon l'objet passer en paramètre
+            </summary>
+        </member>
+        <member name="M:ORMProjet.Mapping.DboMapper.#ctor(ORMProjet.Configuration.DboConfiguration)">
+            <summary>
+            Constructeur permetant la configuration de la connexion a la base de donnée
+            </summary>
+            <param name="cls">
+            Objet de configuration de connexion de la base de donnée
+            créer par l'utilisateur
+            </param>
+        </member>
+        <member name="M:ORMProjet.Mapping.DboMapper.Execute(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Execution d'une requete
+            </summary>
+            <param name="request">Requete paramétrée à executer</param>
+            <param name="parameters">Paramètre de la requete à executer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Mapping.DboMapper.List``1(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Recupère les resultat SQL pour les associés à une liste d'objet.
+            </summary>
+            <typeparam name="T">Type de l'objet voulu</typeparam>
+            <param name="request">Requete paramétrée à executer</param>
+            <param name="parameters">Paramètre de la requete à executer</param>
+            <returns></returns>
+        </member>
+        <member name="M:ORMProjet.Mapping.DboMapper.SetParams(System.String,System.Collections.Generic.List{ORMProjet.Configuration.DboParameter})">
+            <summary>
+            Associe les valeurs des paramètre dans la requete en les echappant
+            </summary>
+            <param name="request"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
