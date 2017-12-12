@@ -59,11 +59,12 @@
     <Compile Include="Configuration\DboConfiguration.cs" />
     <Compile Include="Exceptions\Connection\ORMExceptionsConnection.cs" />
     <Compile Include="Exceptions\Disconnection\ORMExceptionsDeconnection.cs" />
-    <Compile Include="Mapping\AssistantDonnee.cs" />
-    <Compile Include="Mapping\GenerationDonnee.cs" />
-    <Compile Include="Mapping\MappeurNomDonnee.cs" />
-    <Compile Include="Mapping\MappeurPropriete.cs" />
-    <Compile Include="Mapping\NomDonnee.cs" />
+    <Compile Include="Mapping\DataAttributes.cs" />
+    <Compile Include="Mapping\DataNames.cs" />
+    <Compile Include="Mapping\GenerateData.cs" />
+    <Compile Include="Mapping\NamesMapper.cs" />
+    <Compile Include="Mapping\PropertyMapper.cs" />
+    <Compile Include="Mapping\DboMapper.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -82,5 +83,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

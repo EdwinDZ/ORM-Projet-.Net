@@ -13,7 +13,7 @@ namespace ORMProjet.Connection
     /// Cette classe permet de gérer la connexion à une base de données SQLServer
     /// Elle implémente l'interface ISQLConnection
     /// </summary>
-    class ORMSqlServer
+    class ORMSqlServer : ISQLConnection
     {
         // Objet gérant la connexion avec la base de données
         SqlConnection connection;
