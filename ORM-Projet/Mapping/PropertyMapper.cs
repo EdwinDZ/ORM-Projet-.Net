@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 
 namespace ORMProjet.Mapping
 {
-    //Met en correspondance les valeurs avec différents types (int, string, DateTime, etc.).
-    public static class MappeurPropriete
+    /// <summary>
+    /// Met en correspondance les valeurs avec différents types (int, string, DateTime, etc.).
+    /// </summary>
+    public static class PropertyMapper
     {
 
         public static void Map(Type type, DataRow row, PropertyInfo prop, object entity)
         {
-            List<string> columnNames = AssistantDonnee.GetDataNames(type, prop.Name);
+            List<string> columnNames = DataAttributes.GetDataNames(type, prop.Name);
 
             foreach (var columnName in columnNames)
             {
@@ -31,14 +33,21 @@ namespace ORMProjet.Mapping
             }
         }
 
-        //Cette classe permet d'attribuer une valeur à une référence de propriété transmise (PropertyInfo)
-
+        /// <summary>
+        /// Cette classe permet d'attribuer une valeur à une référence de propriété transmise (PropertyInfo)
+        /// </summary>
+        /// <param name="prop"></param>
+        /// <param name="entity"></param>
+        /// <param name="value"></param>
         private static void ParsePrimitive(PropertyInfo prop, object entity, object value)
         {
+            //Type chaine de caractères
             if (prop.PropertyType == typeof(string))
             {
                 prop.SetValue(entity, value.ToString().Trim(), null);
             }
+
+            //Type boolean
             else if (prop.PropertyType == typeof(bool) || prop.PropertyType == typeof(bool?))
             {
                 if (value == null)
@@ -50,6 +59,8 @@ namespace ORMProjet.Mapping
                     prop.SetValue(entity, ParseBoolean(value.ToString()), null);
                 }
             }
+
+            //Type long
             else if (prop.PropertyType == typeof(long))
             {
                 prop.SetValue(entity, long.Parse(value.ToString()), null);
@@ -65,6 +76,8 @@ namespace ORMProjet.Mapping
                     prop.SetValue(entity, int.Parse(value.ToString()), null);
                 }
             }
+
+            //Type decimal
             else if (prop.PropertyType == typeof(decimal))
             {
                 prop.SetValue(entity, decimal.Parse(value.ToString()), null);
@@ -78,6 +91,8 @@ namespace ORMProjet.Mapping
                     prop.SetValue(entity, double.Parse(value.ToString()), null);
                 }
             }
+
+            //Type DateTime
             else if (prop.PropertyType == typeof(DateTime) || prop.PropertyType == typeof(Nullable<DateTime>))
             {
                 DateTime date;
@@ -86,6 +101,8 @@ namespace ORMProjet.Mapping
                 {
                     prop.SetValue(entity, date, null);
                 }
+
+                //Type US Date
                 else if (isValid)
                 {
                     isValid = DateTime.TryParseExact(value.ToString(), "MMddyyyy", new CultureInfo("en-US"), DateTimeStyles.AssumeLocal, out date);
@@ -94,6 +111,8 @@ namespace ORMProjet.Mapping
                         prop.SetValue(entity, date, null);
                     }
                 }
+
+                //Type FR Date
                 else if (isValid)
                 {
                     isValid = DateTime.TryParseExact(value.ToString(), "DDmmyyyy", new CultureInfo("fr-FR"), DateTimeStyles.AssumeLocal, out date);
@@ -103,6 +122,8 @@ namespace ORMProjet.Mapping
                     }
                 }
             }
+
+            //Type Guid
             else if (prop.PropertyType == typeof(Guid))
             {
                 Guid guid;
@@ -124,6 +145,11 @@ namespace ORMProjet.Mapping
             }
         }
 
+        /// <summary>
+        /// Convertie la valeur sous forme de chaine de caractère en boolean
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool ParseBoolean(object value)
         {
             if (value == null || value == DBNull.Value) return false;

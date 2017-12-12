@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace ORMProjet.Mapping
 {
-    public static class GenerationDonnee
+    /// <summary>
+    /// Récupérer les donneés de la liste et les insére en mémoire dans un objet DataSet
+    /// </summary>
+    public static class GenerateData
     {
         public static DataSet ToDataSet<T>(this List<T> list)
         {

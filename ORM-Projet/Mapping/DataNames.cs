@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace ORMProjet.Mapping
 {
-    //Mapping des noms de colones sur les objets correspondants 
-
+    /// <summary>
+    /// Mapping des noms de colones sur les objets correspondants 
+    /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    public class NomDonnee : Attribute
+    public class DataNames : Attribute
     {
+        //getter,  setter de la list _valueNames
         protected List<string> _valueNames { get; set; }
 
         public List<string> ValueNames
@@ -25,12 +27,19 @@ namespace ORMProjet.Mapping
             }
         }
 
-        public NomDonnee()
+        /// <summary>
+        /// Creation d'une nouvelle liste
+        /// </summary>
+        public DataNames()
         {
             _valueNames = new List<string>();
         }
 
-        public NomDonnee(params string[] valueNames)
+        /// <summary>
+        /// Définition de la liste avec les paramètre valueNames
+        /// </summary>
+        /// <param name="valueNames"></param>
+        public DataNames(params string[] valueNames)
         {
             _valueNames = valueNames.ToList();
         }
