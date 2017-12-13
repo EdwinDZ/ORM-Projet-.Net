@@ -2,9 +2,16 @@
 
 Projet scolaire réalisé en C# .NET
 
-## Rep : Example
+## Objectif
 
-Projet servant d'exemple sur l'utilisation de la bibliothèque de classes ORMProjet.dll
+Réalisation d'une DLL permettant un système de mapping relationnel objet.
+
+Le principe est le suivant :
+
+  * Convertir les données relationnelles en objets et inversement
+  * Associer les noms de class avec les noms de table, et les noms de propriétés avec les noms de champs.
+  * Permettre d'éxécuter les méthodes de requétage standard (select, update, insert, delete).
+  * Travailler avec 3 bases de données différentes (SqlServer, MySQL, PostgreSql).
 
 ### Membres du groupe
   * [Mathieu DEROUICHE](https://github.com/MathieuDer)
