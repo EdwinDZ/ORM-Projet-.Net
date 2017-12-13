@@ -1,0 +1,2 @@
+/Users/seb/Projects/C#/ExampleDLL/ExampleDLL/obj/x86/Debug/ExampleDLL.csprojResolveAssemblyReference.cache
+/Users/seb/Projects/C#/ExampleDLL/ExampleDLL/obj/x86/Debug/ExampleDLL.csproj.CoreCompileInputs.cache

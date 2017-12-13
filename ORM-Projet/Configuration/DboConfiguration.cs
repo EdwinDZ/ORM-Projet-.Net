@@ -5,7 +5,7 @@ namespace ORMProjet.Configuration
     /// Class : DboConfiguration.cd
     /// Classe abstraite permettant de configurer la chaine de connexion et le type de base de donnée
     /// </summary>
-    abstract class DboConfiguration
+    public abstract class DboConfiguration
     {
         /// <summary>
         /// Enumération des différents type de SGBD

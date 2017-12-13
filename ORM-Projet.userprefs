@@ -1,19 +1,23 @@
-﻿<Properties StartupConfiguration="{E2DD8742-22A2-46EB-83F3-2E3ED09A2987}|Default">
+﻿<Properties>
   <MonoDevelop.Ide.ItemProperties.ORM-Projet PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ORM-Projet/Configuration/DboParameter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ORM-Projet/Mapping/DboMapper.cs">
     <Files>
-      <File FileName="ORM-Projet/Connection/ORMPostGreSQL.cs" Line="105" Column="17" />
-      <File FileName="ORM-Projet/Exceptions/Connection/ORMExceptionsConnection.cs" Line="24" Column="9" />
-      <File FileName="ORM-Projet/Exceptions/Disconnection/ORMExceptionsDeconnection.cs" Line="31" Column="20" />
-      <File FileName="ORM-Projet/Connection/ORMMySQL.cs" Line="107" Column="17" />
-      <File FileName="ORM-Projet/Connection/ORMSqlServer.cs" Line="106" Column="39" />
-      <File FileName="ORM-Projet/Mapping/DboMapper.cs" Line="75" Column="32" />
-      <File FileName="ORM-Projet/Exceptions/Query/ORMExceptionsQuery.cs" Line="6" Column="5" />
-      <File FileName="ORM-Projet/Mapping/GenerateData.cs" Line="1" Column="1" />
-      <File FileName="ORM-Projet/Connection/ISQLConnection.cs" Line="1" Column="1" />
-      <File FileName="ORM-Projet/Configuration/DboConfiguration.cs" Line="1" Column="1" />
-      <File FileName="ORM-Projet/Configuration/DboParameter.cs" Line="55" Column="65" />
+      <File FileName="ORM-Projet/Mapping/DboMapper.cs" Line="14" Column="53" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ORM-Projet" expanded="True">
+            <Node name="ORM-Projet" expanded="True">
+              <Node name="Configuration" expanded="True" />
+              <Node name="Mapping" expanded="True">
+                <Node name="DboMapper.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

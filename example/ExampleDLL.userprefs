@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{3ED5C27F-1C5B-4730-9049-06A0078A9D53}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ExampleDLL/Program.cs">
+    <Files>
+      <File FileName="ExampleDLL/Program.cs" Line="13" Column="45" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ExampleDLL" expanded="True">
+            <Node name="ExampleDLL" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ExampleDLL PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

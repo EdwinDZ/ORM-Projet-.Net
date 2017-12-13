@@ -9,7 +9,7 @@ namespace ORMProjet.Mapping
     /// Cette classe permet executer des requête
     /// selon l'objet passer en paramètre
     /// </summary>
-    class DboMapper
+    public class DboMapper
     {
         // Gestionnaire de la connexion au server SQL
         static private ISQLConnection conn;
